@@ -18,7 +18,7 @@ class TestAddAppliance:
 		result = host.run(f'stack add appliance {appliance_name} {add_params}')
 		assert result.rc == 0
 
-		result = host.run(f'stack list appliance {appliance_name} output-format=json')
+		result = host.run(f'stack list appliance attr {appliance_name} output-format=json')
 		assert result.rc == 0
 		assert result.stdout.strip() == expected_output.strip()
 
